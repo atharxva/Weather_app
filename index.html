@@ -20,7 +20,7 @@
                 <div class="col">
                     <img src="images/humidity.png">
                     <div>
-                        <p class="humidity">50%</p>
+                        <p class="humidity">10%</p>
                         <p>Humidity</p>
                     </div>
                     </div>
@@ -34,6 +34,48 @@
             </div>
         </div>
     </div>
+    <script>
+        const apikey = "ebd948deb06b3c5c906970c286ba3636";
+        const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const searchbox  = document.querySelector(".search input");
+        const searchbtn  = document.querySelector(".search button");
+        const weatherIcon = document.querySelector (".weather-icon");
+
+        async function checkWeather(city){
+            const response = await fetch(apiurl+city+ `&appid=${apikey}`);
+        
+            var data = await response.json();
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp)+"°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity+"%";
+            document.querySelector(".wind").innerHTML = data.wind.speed+"Km/Hr";
+
+            if(data.weather[0].main == "Clouds")
+            {
+                weatherIcon.src ="images/clouds.png"
+            }
+            else if(data.weather[0].main == "Clear"){
+                weatherIcon.sc = "images/clear.png";
+            }
+            else if(data.weather[0].main == "Rain"){
+                weatherIcon. src = "images/rain.png";
+            }
+            else if(data.weather[0].main == "Drizzle"){
+                weatherIcon.sc = "images/drizzle.png";
+            }
+            else if(data.weather[0].main == "Mist"){
+            weatherIcon.src = "images/mist.png";
+            }
+            document.querySelector(".weather").style.display = "block";
+        }
+
+        searchbtn.addEventListener("click",()=>{
+            checkWeather(searchbox.value);
+        })
+    
+
+    </script>
     
     
 </body>
