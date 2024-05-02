@@ -3,6 +3,8 @@
 
 Welcome to our simple and intuitive weather app! This app allows you to check the current temperature of any city around the world by simply entering its name.
 
+---------------------------------------------------------------------------------------------------------------------------------------
+
 ## Features
 - **City-based Temperature:** Enter the name of any city, and the app will provide you with its current temperature.
 - **User-Friendly Interface:** With a clean and straightforward design, the app is easy to use for users of all levels.
@@ -25,6 +27,5 @@ Contributions are welcome! If you have any suggestions, enhancements, or bug fix
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
----
+---------------------------------------------------------------------------------------------------------------------------------------
 
-Feel free to adjust and expand upon this template according to your specific project details and preferences.
